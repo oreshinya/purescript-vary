@@ -1,4 +1,4 @@
-module Node.HTTP.Vary where
+module Node.HTTP.Vary (vary) where
 
 import Prelude
 import Control.Monad.Eff (Eff)
