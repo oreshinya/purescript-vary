@@ -1,0 +1,35 @@
+{
+  "name": "purescript-vary",
+  "license": "MIT",
+  "homepage": "https://github.com/oreshinya/purescript-vary",
+  "authors": [
+    "Shinya Takahashi <s.takahashi313@gmail.com>"
+  ],
+  "description": "Manipulate the HTTP Vary header",
+  "keywords": [
+    "purescript",
+    "node"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oreshinya/purescript-vary.git"
+  },
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^3.0.0",
+    "purescript-node-http": "^4.0.0",
+    "purescript-maybe": "^3.0.0",
+    "purescript-strings": "^3.2.1",
+    "purescript-eff": "^3.1.0",
+    "purescript-maps": "^3.3.1",
+    "purescript-arrays": "^4.1.0"
+  }
+}
