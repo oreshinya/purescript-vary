@@ -1,16 +1,17 @@
 module Node.HTTP.Vary (vary) where
 
 import Prelude
-import Control.Monad.Eff (Eff)
+
+import Effect (Effect)
 import Data.Array (nub, (:))
 import Data.Maybe (Maybe, maybe)
 import Data.String (Pattern(..), split, joinWith)
-import Data.StrMap (StrMap, lookup)
-import Node.HTTP (HTTP, Response, setHeader)
+import Foreign.Object (Object, lookup)
+import Node.HTTP (Response, setHeader)
 
 
 
-vary :: forall e. Response -> String -> Eff (http :: HTTP | e) Unit
+vary :: Response -> String -> Effect Unit
 vary res val = setHeader res "Vary" $ maybe val add $ responseHeader res "vary"
   where
     add vary' = joinWith divider $ nub $ val : split pattern vary'
@@ -32,4 +33,4 @@ pattern = Pattern divider
 
 
 
-foreign import responseHeaders :: Response -> StrMap String
+foreign import responseHeaders :: Response -> Object String
